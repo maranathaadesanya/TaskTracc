@@ -8,9 +8,8 @@ const Signup = () => {
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
-    username: "",
   });
-  const { email, password, username } = inputValue;
+  const { email, password } = inputValue;
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -54,7 +53,6 @@ const Signup = () => {
       ...inputValue,
       email: "",
       password: "",
-      username: "",
     });
   };
 
@@ -70,16 +68,7 @@ const Signup = () => {
             value={email}
             placeholder="Enter your email"
             onChange={handleOnChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Username</label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            placeholder="Enter your username"
-            onChange={handleOnChange}
+            autoComplete="email"
           />
         </div>
         <div>
@@ -90,6 +79,7 @@ const Signup = () => {
             value={password}
             placeholder="Enter your password"
             onChange={handleOnChange}
+            autoComplete="current-password"
           />
         </div>
         <button type="submit">Submit</button>

@@ -45,8 +45,8 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
-        }, 200);
+        navigate("/tasktrack");
+        }, 2000);
       } else {
         handleError(message);
       }
@@ -61,31 +61,33 @@ const Login = () => {
   };
 
   const [cookies, removeCookie] = useCookies([]);
+  // eslint-disable-next-line
   const [ username, setUsername] = useState("");
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
         navigate("/login");
       }
+      // eslint-disable-next-line
       const { data } = await axios.post(
         "http://localhost:4000",
         {},
         { withCredentials: true }
       );
-      const { status, user } = data;
+      /*const { status, user } = data;
       setUsername(user);
       return status
         ? toast(`Hello ${user}`, {
             position: "top-right",
           })
-        : (removeCookie("token"), navigate("/login"));
+        : (removeCookie("token"), navigate("/signup"));*/
     };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
 
   return (
     <div className="form_container">
-      <h2>Login Account <span>{username}</span></h2>
+      <h2>Login Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email</label>
@@ -95,6 +97,7 @@ const Login = () => {
             value={email}
             placeholder="Enter your email"
             onChange={handleOnChange}
+            autoComplete="email"
           />
         </div>
         <div>
@@ -105,6 +108,7 @@ const Login = () => {
             value={password}
             placeholder="Enter your password"
             onChange={handleOnChange}
+            autoComplete="current-password"
           />
         </div>
         <button type="submit">Submit</button>

@@ -19,11 +19,12 @@ const Home = () => {
   return (
     <>
       <div className="home_page">
+      <img src='logo192.png'className='logo' alt="logo"></img>
         <h4>
           {" "}
           TASKTRACK
         </h4>
-        <button onClick={Login}>WELCOME</button>
+        <button className="blinking-button" onClick={Login}>WELCOME</button>
       </div>
       <ToastContainer />
     </>

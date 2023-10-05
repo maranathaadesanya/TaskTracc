@@ -23,14 +23,14 @@ code {
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  box-sizing: content-box;
   padding: 0;
   margin: 0;
 }
 
 label {
   font-size: 1.2rem;
-  color: #656262;
+  color: #000000;
 }
 
 html,
@@ -51,7 +51,7 @@ body {
 .form_container > h2 {
   margin-block: 1rem;
   padding-block: 0.6rem;
-  color: rgba(0, 212, 255, 1);
+  color: rgb(0, 0, 0);
 }
 
 .form_container > form {
@@ -110,8 +110,9 @@ span a {
 }
 
 .logo {
-  width: 80px;
+  width: 200px;
   height: auto;
+  position: relative;
   margin-right: 20px;
 }
 
@@ -119,7 +120,20 @@ span a {
   color: rgba(0, 212, 255, 1);
 }
 
-.home_page button {
+@keyframes blink {
+  0% {
+    opacity: 1.5;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-button {
+  animation: blink 1.5s infinite;
   background-color: rgb(69, 63, 14);
   color: #fff;
   cursor: pointer;
@@ -130,10 +144,9 @@ span a {
   border: none;
 }
 
-.home_page button:hover {
-  background-color: rgb(146, 139, 89);;
+.blinking-button:hover {
+  animation: none;
 }
-
 
 @media only screen and (max-width: 1200px){
   .home_page{
