@@ -1,0 +1,25 @@
+POST https://tasktracc.onrender.com/api/item
+Content-Type: application/json
+
+{
+  "item": "This is the second todo item"
+}
+
+###
+
+GET https://tasktracc.onrender.com/api/items
+Content-Type: application/json
+
+###
+
+PUT https://tasktracc.onrender.com/api/item
+Content-Type: application/json
+
+{
+  "item": "This is the second todo item updated!!"
+}
+
+###
+
+DELETE  https://tasktracc.onrender.com/api/item
+Content-Type: application/json
