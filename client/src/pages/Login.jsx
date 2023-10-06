@@ -45,7 +45,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-        navigate("/tasktrack");
+        navigate("/todolist");
         }, 2000);
       } else {
         handleError(message);
@@ -86,7 +86,7 @@ const Login = () => {
   }, [cookies, navigate, removeCookie]);
 
   return (
-    <div className="form_container">
+    <div className="form_container1">
       <h2>Login Account</h2>
       <form onSubmit={handleSubmit}>
         <div>

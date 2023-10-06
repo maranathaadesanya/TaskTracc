@@ -39,8 +39,16 @@ body {
   width: 100%;
 }
 
-.form_container {
-  background-color: #504621;
+.form_container1 body{
+  background-image: url(scribb.jpg) no-repeat center center fixed;
+}
+
+.form_container2 body {
+  background-image: url(scribb.jpg) no-repeat center center fixed;
+}
+
+.form_container1 {
+  background-image: url(scribb.jpg) no-repeat center center fixed;
   padding: 2rem 3rem;
   border-radius: 0.5rem;
   width: 100%;
@@ -48,25 +56,34 @@ body {
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
-.form_container > h2 {
+.form_container2 {
+  background-image: url(scribb.jpg) no-repeat center center fixed;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.form_container1 > h2 {
   margin-block: 1rem;
   padding-block: 0.6rem;
   color: rgb(0, 0, 0);
 }
 
-.form_container > form {
+.form_container1 > form {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
 }
 
-.form_container div {
+.form_container1 div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
 
-.form_container input {
+.form_container1 input {
   border: none;
   padding: 0.5rem;
   border-bottom: 1px solid gray;
@@ -74,12 +91,53 @@ body {
   outline: none;
 }
 
-.form_container input::placeholder {
+.form_container1 input::placeholder {
   font-size: 0.9rem;
   font-style: italic;
 }
 
-.form_container button {
+.form_container1 button {
+  background-color: rgb(79, 118, 126);
+  color: #fff;
+  border: none;
+  padding: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+.form_container2 > h2 {
+  margin-block: 1rem;
+  padding-block: 0.6rem;
+  color: rgb(0, 0, 0);
+}
+
+.form_container2 > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form_container2 div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form_container2 input {
+  border: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid gray;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.form_container2 input::placeholder {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.form_container2 button {
   background-color: rgb(79, 118, 126);
   color: #fff;
   border: none;
@@ -185,4 +243,236 @@ span a {
     padding: 0.6rem 1rem;
     font-size: 1.5rem;
   }
+}
+
+:root {
+  --primary-color: #2c3e50; /* Midnight Blue */
+  --secondary-color: #605e52; /* Dodger Blue */
+  --button-bg-color: #27ae60; /* Nephritis Green */
+  --button-delete-bg-color: #888787; /* Alizarin Red */
+  --text-color: #ecf0f1; /* Clouds */
+  --font-family: 'Roboto', sans-serif;
+}
+.Todolist body{
+  background: url(main.jpg) cover no-repeat center;
+}
+
+.Todolist{
+  /*background-color: #36100e;*/
+  background: url(main.jpg) cover no-repeat center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  max-width: 600px;
+  margin: 100px auto;
+  height: fit-content;
+  margin: 120px auto;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.book {
+  width: 80px;
+  height: auto;
+  position: relative;
+  margin-right: 20px;
+}
+
+h1{
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.form-page-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.form-page-2 input[type="text"] {
+  flex: 1;
+  padding:10px;
+  width: 85%;
+  border: #27ae60;
+  border-radius: 6px;
+  outline-style: auto;
+  outline-color: #19c4c4;
+}
+
+.form-page-2 input[type="text"]:focus {
+  outline-style: auto;
+  outline-color: #27ae60;
+}
+
+.form-page-2 button[type="submit"] {
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-page-2 button[type="submit"]:hover {
+  background-color: teal;
+}
+
+.todo-listItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #2c3e50;
+}
+
+.item-content {
+  width: 60%
+}
+
+.todo-item button {
+  color: var(--text-color);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 8px;
+}
+
+.todo-item button:hover {
+  background-color: tan;
+}
+
+.update-item{
+  background-color: rgb(133, 133, 5);
+}
+
+.delete-item{
+  background-color: var(--button-delete-bg-color);
+}
+
+.update-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.update-new-input {
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  padding: 8px;
+  outline: none;
+}
+
+.set {
+  width: 80%;
+  padding: 8px;
+  outline-style: auto;
+  outline-color: #aaf3c8;
+  border: black;
+  border-radius: 6px;
+}
+
+.set[type="text"]:focus {
+  outline-style: auto;
+  outline-color: #27ae60;
+}
+
+.update-new-btn {
+  background-color: rgb(62, 62, 59);
+  color: #fff;
+  cursor: pointer;
+}
+
+.completed-task {
+  text-decoration: line-through;
+}
+
+.complete-button {
+  background-color: #2980b9;
+}
+
+.undo-complete-button {
+  background-color: #2980b9;
+}
+
+.search-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.search-icon-img {
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#search-input {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(-50%);
+  display: none;
+  outline-style: auto;
+  outline-color: #27ae60;
+  border: black;
+  border-radius: 6px;
+}
+
+.hut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.hut input[type="text"] {
+  flex: 1;
+  padding:10px;
+  width: 85%;
+}
+
+.search-button[type="submit"] {
+  background-color: #ad660f;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-color: #ecf0f1;
+  box-sizing: content-box;
+  outline-color: none;
+  outline-style: none;
+}
+
+.message {
+  background-color: #02f84c;
+  color: #36100e;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
 }
