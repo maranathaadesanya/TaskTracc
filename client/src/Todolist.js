@@ -46,7 +46,7 @@ function Todolist() {
     }
   
     try {
-      const res = await axios.post('https://tasktrack-hw9r.onrender.com/api/item', { item: itemText });
+      const res = await axios.post('https://tasktracc.onrender.com/api/item', { item: itemText });
       setListItems((prev) => [...prev, res.data]); // Update the listItems state with the new item from the server response
       displayMessage('Task added! 🌟'); // Display a cute message when a task is added
     } catch (err) {
@@ -60,7 +60,7 @@ function Todolist() {
   useEffect(()=>{
     const getItemsList = async () => {
       try{
-        const res = await axios.get('https://tasktrack-hw9r.onrender.com/api/items')
+        const res = await axios.get('https://tasktracc.onrender.com/api/items')
         setListItems(res.data);
         console.log('render')
       }catch(err){
@@ -79,7 +79,7 @@ function Todolist() {
       displayMessage('Task deleted! 😢'); // Display a cute message when a task is deleted
       
       // Send API request to delete the item
-      axios.delete(`https://tasktrack-hw9r.onrender.com/api/item/${id}`)
+      axios.delete(`https://tasktracc.onrender.com/api/item/${id}`)
         .catch((err) => {
           console.error(err);
           // If there is an error, revert the UI to the previous state
@@ -106,7 +106,7 @@ function Todolist() {
       }
     
       try {
-        const res = await axios.put(`https://tasktrack-hw9r.onrender.com/api/item/${isUpdating}`, { item: updateItemText });
+        const res = await axios.put(`https://tasktracc.onrender.com/api/item/${isUpdating}`, { item: updateItemText });
         console.log(res.data);
         const updatedItemIndex = listItems.findIndex(item => item._id === isUpdating);
         const updatedItems = [...listItems];
@@ -136,7 +136,7 @@ function Todolist() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://tasktrack-hw9r.onrender.com/api/items');
+        const response = await axios.get('https://tasktracc.onrender.com/api/items');
         setListItems(response.data);
       } catch (error) {
         console.error(error);
@@ -154,7 +154,7 @@ function Todolist() {
       setListItems(updatedItems);
   
       // Make API call to update the completed status on the server (if needed)
-      await axios.put(`https://tasktrack-hw9r.onrender.com/api/item/${id}`, {
+      await axios.put(`https://tasktracc.onrender.com/api/item/${id}`, {
         isCompleted: !updatedItems.find((item) => item._id === id).isCompleted,
       });
   
