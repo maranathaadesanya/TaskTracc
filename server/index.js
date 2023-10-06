@@ -6,7 +6,7 @@ require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
 const { MONGO_URL, PORT } = process.env;
-const TodoItemRoute = require('./routes/todoItems');
+const TodoItemRoute = require('./Routes/todoItems');
 
 mongoose
   .connect(MONGO_URL, {

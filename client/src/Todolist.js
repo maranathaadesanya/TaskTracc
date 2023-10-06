@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useEffect } from "react";
-import { useCookies } from "react-cookie";
 import "./index.css";
 import "./TodoList.css";
 import searchIcon from './search-icon.png';
