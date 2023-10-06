@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        "https://tasktracc.onrender.com/login",
         {
           ...inputValue,
         },
@@ -70,7 +70,7 @@ const Login = () => {
       }
       // eslint-disable-next-line
       const { data } = await axios.post(
-        "http://localhost:4000",
+        "https://tasktracc.onrender.com",
         {},
         { withCredentials: true }
       );
