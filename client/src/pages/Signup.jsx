@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { useEffect } from "react";
+import { useCookies } from "react-cookie";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -41,7 +43,7 @@ const Signup = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
+          navigate("/login");
         }, 1000);
       } else {
         handleError(message);
@@ -55,6 +57,30 @@ const Signup = () => {
       password: "",
     });
   };
+  const [cookies, removeCookie] = useCookies([]);
+  // eslint-disable-next-line
+  const [ username, setUsername] = useState("");
+  useEffect(() => {
+    const verifyCookie = async () => {
+      if (!cookies.token) {
+        navigate("/login");
+      }
+      // eslint-disable-next-line
+      const { data } = await axios.post(
+        "https://tasktracc.onrender.com",
+        {},
+        { withCredentials: true }
+      );
+      /*const { status, user } = data;
+      setUsername(user);
+      return status
+        ? toast(`Hello ${user}`, {
+            position: "top-right",
+          })
+        : (removeCookie("token"), navigate("/signup"));*/
+    };
+    verifyCookie();
+  }, [cookies, navigate, removeCookie]);
 
   return (
     <div className="form_container2">
