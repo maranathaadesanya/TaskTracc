@@ -165,8 +165,18 @@ function Todolist() {
     }
   };
 
+  const handleLogout = () => {
+    // Clear user token from local storage or wherever it's stored
+    localStorage.removeItem('userToken');
+    // Redirect to your login page
+    window.location.href = '/'; // Change '/login' to the actual path of your login page
+  };
+
   return(
     <>
+    <div className="logout-button-container">
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+      </div>
         <div className="Todolist">
           <img src='logo192.png' className='book' alt='logo'></img>
           <h1>TASKTRACK TO-DO LIST</h1>

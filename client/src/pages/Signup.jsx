@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+// eslint-disable-next-line
 import { useEffect } from "react";
+// eslint-disable-next-line
 import { useCookies } from "react-cookie";
 
 const Signup = () => {
@@ -10,8 +12,9 @@ const Signup = () => {
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
+    username: "",
   });
-  const { email, password } = inputValue;
+  const { email, password, username } = inputValue;
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -55,9 +58,10 @@ const Signup = () => {
       ...inputValue,
       email: "",
       password: "",
+      username: "",
     });
   };
-  const [cookies, removeCookie] = useCookies([]);
+  /*const [cookies, removeCookie] = useCookies([]);
   // eslint-disable-next-line
   const [ username, setUsername] = useState("");
   useEffect(() => {
@@ -77,10 +81,10 @@ const Signup = () => {
         ? toast(`Hello ${user}`, {
             position: "top-right",
           })
-        : (removeCookie("token"), navigate("/signup"));*/
+        : (removeCookie("token"), navigate("/signup"));
     };
     verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+  }, [cookies, navigate, removeCookie]);*/
 
   return (
     <div className="form_container2">
@@ -95,6 +99,16 @@ const Signup = () => {
             placeholder="Enter your email"
             onChange={handleOnChange}
             autoComplete="email"
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Username</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            placeholder="Enter your username"
+            onChange={handleOnChange}
           />
         </div>
         <div>

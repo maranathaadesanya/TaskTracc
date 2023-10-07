@@ -178,6 +178,41 @@ span a {
   color: rgba(0, 212, 255, 1);
 }
 
+.logout-button {
+  background-color: rgb(133, 110, 62);
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  transition: ease-in 0.3s;
+  border: none;
+  position: fixed;
+  bottom:10px;
+  right: 10px;
+}
+
+.logout-button:hover {
+  background-color: rgb(255, 0, 0);
+  animation: none;
+}
+
+/*.logout-botton {
+  animation: blink 1.5s infinite;
+  background-color: rgb(69, 63, 14);
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  transition: ease-in 0.3s;
+  border: none;
+}
+
+.logout-botton:hover {
+  animation: none;
+}*/
+
 @keyframes blink {
   0% {
     opacity: 1.5;
