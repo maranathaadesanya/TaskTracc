@@ -176,43 +176,43 @@ function Todolist() {
     <>
     <div className="logout-button-container">
         <button className="logout-button" onClick={handleLogout}>Logout</button>
+    </div>
+    <div className="Todolist">
+      <img src='logo192.png' className='book' alt='logo'></img>
+      <h1>TASKTRACK TO-DO LIST</h1>
+      <form className="form-page-2" onSubmit={e => addItem(e)}>
+        <input type="text" placeholder='Add Item...' onChange={e => {setItemText(e.target.value)} } value={itemText} />
+        <button type="submit">Add</button>
+      </form>
+      <div className='hut'>
+          <input type="text" placeholder="Search tasks..." className="set" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+          <button className="search-button"><img src={searchIcon} alt="Search" className="search-icon-img"/></button>
       </div>
-        <div className="Todolist">
-          <img src='logo192.png' className='book' alt='logo'></img>
-          <h1>TASKTRACK TO-DO LIST</h1>
-          <form className="form-page-2" onSubmit={e => addItem(e)}>
-            <input type="text" placeholder='Add Item...' onChange={e => {setItemText(e.target.value)} } value={itemText} />
-            <button type="submit">Add</button>
-          </form>
-          <div className='hut'>
-              <input type="text" placeholder="Search tasks..." className="set" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-              <button className="search-button"><img src={searchIcon} alt="Search" className="search-icon-img"/></button>
-          </div>
-          <div className="todo-listItems">
-            {filteredListItems.map((item) => (
-              <div className={`todo-item ${item.isCompleted ? 'completed' : ''}`} key={item._id}>
-                <p className={`item-content ${item.isCompleted ? 'completed-task' : ''}`}>{item.item}</p>
-                {item.isCompleted ? (
-                  <button className="undo-complete-button" onClick={() => handleComplete(item._id)}>Undo Complete</button>
-                ) : (
-                  <button className="complete-button" onClick={() => handleComplete(item._id)}>Complete</button>
-                )}
-                {
-                  isUpdating === item._id
-                  ? renderUpdateForm()
-                  : <>
-                      <button className="update-item" onClick={() => { setIsUpdating(item._id) }}>Update</button>
-                      <button className="delete-item" onClick={() => { deleteItem(item._id) }}>Delete</button>
-                    </>
-                }
-              </div>
-              ))
+      <div className="todo-listItems">
+        {filteredListItems.map((item) => (
+          <div className={`todo-item ${item.isCompleted ? 'completed' : ''}`} key={item._id}>
+            <p className={`item-content ${item.isCompleted ? 'completed-task' : ''}`}>{item.item}</p>
+            {item.isCompleted ? (
+              <button className="undo-complete-button" onClick={() => handleComplete(item._id)}>Undo Complete</button>
+            ) : (
+              <button className="complete-button" onClick={() => handleComplete(item._id)}>Complete</button>
+            )}
+            {
+              isUpdating === item._id
+              ? renderUpdateForm()
+              : <>
+                  <button className="update-item" onClick={() => { setIsUpdating(item._id) }}>Update</button>
+                  <button className="delete-item" onClick={() => { deleteItem(item._id) }}>Delete</button>
+                </>
             }
-          {message && <div className="message">{message}</div>}
-
           </div>
-          <ToastContainer/>
-        </div>
+          ))
+        }
+      {message && <div className="message">{message}</div>}
+
+      </div>
+      <ToastContainer/>
+    </div>
       </>
   );
 }
