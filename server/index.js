@@ -22,6 +22,7 @@ app.listen(PORT, () => {
 
 app.use(
   cors({
+    origin: ["https://tasktracc.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
