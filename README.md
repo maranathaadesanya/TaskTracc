@@ -1,4 +1,4 @@
-# TaskTrack App
+(/client/public/logo192.png)# TaskTrack App
 
 TaskTrack is a sophisticated task management web application developed by Maranatha Adesanya using the MERN (MongoDB, Express.js, React, Node.js) stack. This app is designed to help individuals and teams streamline their task tracking and project management processes efficiently. TaskTrack provides a user-friendly interface for creating, organizing, and tracking tasks with ease.
 
