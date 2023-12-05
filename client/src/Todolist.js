@@ -127,9 +127,9 @@ function Todolist() {
   )
 
   // Filter the list based on the search query
-  const filteredListItems = listItems.filter(item =>
+  const filteredListItems = listItems ? listItems.filter(item =>
     item.item.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  ) : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -146,9 +146,9 @@ function Todolist() {
 
   const handleComplete = async (id) => {
     try {
-      const updatedItems = listItems.map((item) =>
+      const updatedItems = listItems ? listItems.map((item) =>
         item._id === id ? { ...item, isCompleted: !item.isCompleted } : item
-      );
+      ) : null;
       setListItems(updatedItems);
   
       // Make API call to update the completed status on the server (if needed)
@@ -189,7 +189,7 @@ function Todolist() {
           <button className="search-button"><img src={searchIcon} alt="Search" className="search-icon-img"/></button>
       </div>
       <div className="todo-listItems">
-        {filteredListItems.map((item) => (
+        {filteredListItems ? filteredListItems.map((item) => (
           <div className={`todo-item ${item.isCompleted ? 'completed' : ''}`} key={item._id}>
             <p className={`item-content ${item.isCompleted ? 'completed-task' : ''}`}>{item.item}</p>
             {item.isCompleted ? (
@@ -207,6 +207,7 @@ function Todolist() {
             }
           </div>
           ))
+          : <h3>You have no tasks yet</h3>
         }
       {message && <div className="message">{message}</div>}
 
